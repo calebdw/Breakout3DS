@@ -10,6 +10,7 @@ LDFLAGS=-nostartfiles
 all:
 	$(CC) -g source/*.c $(CFLAGS)
 	$(CC) -g source/*.s $(CFLAGS)
+	mkdir -p obj
 	cp *.o ./obj
 	$(CC) -T 3ds.ld *.o $(LDFLAGS)
 	cp a.out ./bin/homebrew.elf
